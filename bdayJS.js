@@ -40,12 +40,14 @@ function determineLuck(dt,luckyNo){
     console.log(sum);
     if(sum%luckyNo===0){
         //console.log("Lucky");
+        errorPara.style.display= "none";
         outputArea.style.display="block";
         outputArea.style.color=" rgb(9, 243, 67)";
         outputArea.innerHTML= "Congratulations 🥳!  You are Lucky!"
     }
     else{
         //console.log("Unlucky");
+        errorPara.style.display= "none";
         outputArea.style.display="block";
         outputArea.style.color="rgb(230, 73, 73)";
         outputArea.innerHTML="Sorry. But what is luck- Luck is believing you're lucky"
