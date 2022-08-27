@@ -55,8 +55,10 @@ function determineLuck(dt,luckyNo){
     }
 }
 function showError(e){
-    errorPara.style.display= "block";
+//     errorPara.style.display= "block";
     
-    errorPara.style.color= "rgb(230, 73, 73)";
-    errorPara.innerHTML=e;
+//     errorPara.style.color= "rgb(230, 73, 73)";
+//     errorPara.innerHTML=e;
+    outputArea.style.color="rgb(230, 73, 73)"; 
+    outputArea.innerHTML=e;
 }
