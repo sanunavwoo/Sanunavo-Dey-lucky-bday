@@ -59,6 +59,7 @@ function showError(e){
     
 //     errorPara.style.color= "rgb(230, 73, 73)";
 //     errorPara.innerHTML=e;
+    outputArea.style.display="block";
     outputArea.style.color="rgb(230, 73, 73)"; 
     outputArea.innerHTML=e;
 }
