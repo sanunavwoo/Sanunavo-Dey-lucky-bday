@@ -12,12 +12,17 @@ checkBtn.addEventListener("click", function validateLuckyNo(){
     {
         alert("Please fill up all fields");
     }
-    
-    else if(!(isNaN(luckyNoInputValue))){
-       determineLuck(dateInputValue,luckyNoInputValue);
+    if(luckyNoInputValue>0){
+        if(!(isNaN(luckyNoInputValue)))
+        {
+            determineLuck(dateInputValue,luckyNoInputValue);
+        }
+        else{
+        showError("Not a number. Enter a nice positive number!");
+    }
     }
     else{
-        showError("Not a number. Enter a number!");
+        showError("Not a number. Enter a nice positive number!");
     }
     var sumOfDate;
 
