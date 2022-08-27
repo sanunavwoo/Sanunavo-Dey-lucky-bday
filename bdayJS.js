@@ -15,6 +15,7 @@ checkBtn.addEventListener("click", function validateLuckyNo(){
     if(luckyNoInputValue>0){
         if(!(isNaN(luckyNoInputValue)))
         {
+            errorPara.style.display= "none";
             determineLuck(dateInputValue,luckyNoInputValue);
         }
         else{
