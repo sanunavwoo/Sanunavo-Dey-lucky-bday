@@ -10,21 +10,23 @@ checkBtn.addEventListener("click", function validateLuckyNo(){
     //console.log(dateInputValue);
     if(luckyNoInputValue=="" || dateInputValue=="")
     {
+        outputArea.style.display="none";
         alert("Please fill up all fields");
     }
-    if(luckyNoInputValue>0){
-        if(!(isNaN(luckyNoInputValue)))
-        {
-            errorPara.style.display= "none";
-            determineLuck(dateInputValue,luckyNoInputValue);
-        }
-        else{
-        showError("Not a number. Enter a nice positive number!");
-    }
+    else if(luckyNoInputValue<0){
+        outputArea.style.display="none";
+        alert("Enter a nice positive number!");
     }
     else{
-        showError("Not a number. Enter a nice positive number!");
+        determineLuck(dateInputValue,luckyNoInputValue);
     }
+    
+    // else if(!(isNaN(luckyNoInputValue))){
+    //    determineLuck(dateInputValue,luckyNoInputValue);
+    // }
+    // else{
+    //     showError("Not a number. Enter a number!");
+    // }
     var sumOfDate;
 
 }
@@ -41,25 +43,18 @@ function determineLuck(dt,luckyNo){
     console.log(sum);
     if(sum%luckyNo===0){
         //console.log("Lucky");
-        errorPara.style.display= "none";
         outputArea.style.display="block";
         outputArea.style.color=" rgb(9, 243, 67)";
         outputArea.innerHTML= "Congratulations 🥳!  You are Lucky!"
     }
     else{
         //console.log("Unlucky");
-        errorPara.style.display= "none";
         outputArea.style.display="block";
         outputArea.style.color="rgb(230, 73, 73)";
         outputArea.innerHTML="Sorry. But what is luck- Luck is believing you're lucky"
     }
 }
 function showError(e){
-//     errorPara.style.display= "block";
-    
-//     errorPara.style.color= "rgb(230, 73, 73)";
-//     errorPara.innerHTML=e;
-    outputArea.style.display="block";
-    outputArea.style.color="rgb(230, 73, 73)"; 
-    outputArea.innerHTML=e;
+    errorPara.style.display= "block";
+    errorPara.innerHTML=e;
 }
