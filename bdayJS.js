@@ -10,15 +10,23 @@ checkBtn.addEventListener("click", function validateLuckyNo(){
     //console.log(dateInputValue);
     if(luckyNoInputValue=="" || dateInputValue=="")
     {
+        outputArea.style.display="none";
         alert("Please fill up all fields");
     }
-    
-    else if(!(isNaN(luckyNoInputValue))){
-       determineLuck(dateInputValue,luckyNoInputValue);
+    else if(luckyNoInputValue<0){
+        outputArea.style.display="none";
+        alert("Enter a nice positive number!");
     }
     else{
-        showError("Not a number. Enter a number!");
+        determineLuck(dateInputValue,luckyNoInputValue);
     }
+    
+    // else if(!(isNaN(luckyNoInputValue))){
+    //    determineLuck(dateInputValue,luckyNoInputValue);
+    // }
+    // else{
+    //     showError("Not a number. Enter a number!");
+    // }
     var sumOfDate;
 
 }
